@@ -1,10 +1,11 @@
 // Lista de múltiplas API keys
 const apiKeys = [
+    'd0f0562569f2218c07ae169682baa311',
     '35c3cdade3bdc0832a425a58a8318194',
     '1a3754dc43e03659f93f4f8a0d6270e1',
-    '393bec881298b81d998019ceae394641',
-    'd0f0562569f2218c07ae169682baa311';
-];
+    '393bec881298b81d998019ceae394641';
+
+
 let currentKeyIndex = 0;
 let page = 1;
 let currentQuery = 'programação';
