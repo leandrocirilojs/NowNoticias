@@ -1,6 +1,5 @@
 // Lista de múltiplas API keys
 const apiKeys = [
-    'd0f0562569f2218c07ae169682baa311',
     '35c3cdade3bdc0832a425a58a8318194',
     '1a3754dc43e03659f93f4f8a0d6270e1',
     '393bec881298b81d998019ceae394641'
@@ -51,26 +50,30 @@ async function fetchNews(query) {
             if (page === 1) newsContainer.innerHTML = ''; // Limpar resultados anteriores em nova busca
 
             // Exibir resultados
-            data.articles.forEach(article => {
-                const newsItem = document.createElement('div');
-                newsItem.classList.add('news-item');
+            if (data.articles && data.articles.length > 0) {
+                data.articles.forEach(article => {
+                    const newsItem = document.createElement('div');
+                    newsItem.classList.add('news-item');
 
-                // Verificar se a imagem existe na postagem
-                let imageUrl = article.image || article.urlToImage;
-                let imageElement = '';
-                if (imageUrl) {
-                    imageElement = `<img src="${imageUrl}" alt="Imagem da notícia" class="news-image" />`;
-                }
+                    // Verificar se a imagem existe na postagem
+                    let imageUrl = article.image || article.urlToImage;
+                    let imageElement = '';
+                    if (imageUrl) {
+                        imageElement = `<img src="${imageUrl}" alt="Imagem da notícia" class="news-image" />`;
+                    }
 
-                newsItem.innerHTML = `
-                    ${imageElement}  <!-- Adiciona a imagem aqui -->
-                    <h3>${article.title}</h3>
-                    <p>${article.source.name}</p>
-                    <button onclick="openModal('${article.url}')">Leia mais</button>
-                `;
-                
-                newsContainer.appendChild(newsItem);
-            });
+                    newsItem.innerHTML = `
+                        ${imageElement}  <!-- Adiciona a imagem aqui -->
+                        <h3>${article.title}</h3>
+                        <p>${article.source.name}</p>
+                        <button onclick="openModal('${article.url}')">Leia mais</button>
+                    `;
+                    
+                    newsContainer.appendChild(newsItem);
+                });
+            } else {
+                newsContainer.innerHTML = '<p>Nenhuma notícia encontrada para sua pesquisa.</p>';
+            }
             return; // Sai do loop se a chamada for bem-sucedida
 
         } catch (error) {
