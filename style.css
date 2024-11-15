@@ -141,13 +141,16 @@ button:hover {
 }
 
 #close-modal {
-    background-color: #ff4d4d;
+    position: fixed;
+    left:0;
+    top: 0;
+    background-color: fc1723;
     color: white;
     border: none;
-    padding: 10px;
+    padding: 6px;
     cursor: pointer;
-    font-weight: bold;
-    align-self: flex-end;
+    
+    
     transition: background-color 0.3s ease;
 }
 
