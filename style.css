@@ -32,9 +32,7 @@ form {
     gap: 15px;
     margin-bottom: 30px;
     background: rgba(0, 0, 0, 0.6);
-    padding: 15px;
-    border-radius: 10px;
-    border: 1px solid #39ff14;
+    padding: 10px;
 }
 
 input {
