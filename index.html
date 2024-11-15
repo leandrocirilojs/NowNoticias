@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias de Programação</title>
+  
+</head>
+<body>
+
+    <h1>Notícias de Programação</h1>
+    <form id="search-form">
+        <input type="text" id="search-input" placeholder="Digite um tema para buscar..." required>
+        <button type="submit">Buscar</button>
+    </form>
+    <div id="news-container"></div>
+
+    <!-- Modal para notícia completa -->
+    <div id="modal">
+        <div id="modal-content">
+            <button id="close-modal">Fechar</button>
+            <iframe id="news-iframe"></iframe>
+        </div>
+    </div>
+
+    
+</body>
+</html>
