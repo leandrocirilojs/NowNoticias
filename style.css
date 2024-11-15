@@ -75,15 +75,15 @@ button:hover {
     max-width: 1000px;
     margin-top: 20px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 30px;
 }
 
 /* Estilo das notícias */
 .news-item {
     background: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    border-radius: 12px;
+    padding: 10px;
+
     border: 1px solid #00ffff;
     box-shadow: 0 4px 20px rgba(0, 255, 255, 0.2);
     transition: all 0.3s ease;
@@ -178,6 +178,6 @@ iframe {
 .news-item img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
-    margin-bottom: 15px;
+    
+    margin-bottom: 10px;
 }
