@@ -36,11 +36,11 @@ form {
 }
 
 input {
-    padding: 12px;
-    width: 300px;
-    background: rgba(0, 0, 0, 0.5);
-    border: 2px solid #00ffff;
-    border-radius: 8px;
+    padding: 6px;
+    width: 200px;
+    
+    border: 1px solid #00ffff;
+    border-radius: 2px;
     color: #00ffff;
     outline: none;
     transition: all 0.3s ease-in-out;
@@ -52,11 +52,11 @@ input:focus {
 }
 
 button {
-    padding: 10px 25px;
-    background: #0073e6;
+    padding: 6px 6px;
+    
     color: white;
     border: 2px solid #00ffff;
-    border-radius: 8px;
+    border-radius: 2px;
     cursor: pointer;
     text-transform: uppercase;
     transition: all 0.3s;
