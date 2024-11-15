@@ -35,7 +35,7 @@
                 const response = await fetch(apiUrl);
                 
                 if (response.status === 429) { // Limite de requisições atingido
-                    console.warn(`Limite atingido para a chave ${apiKey}. Tentando a próxima...`);
+                    alert(`Limite atingido para a chave ${apiKey}. Tentando a próxima...`);
                     if (!rotateApiKey()) {
                         alert('Todas as chaves foram utilizadas. Tente novamente mais tarde.');
                         return;
