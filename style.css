@@ -172,3 +172,12 @@ iframe {
     border: none;
     background: rgba(0, 0, 0, 0.8);
 }
+
+
+/* Estilo das imagens nas notícias */
+.news-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
