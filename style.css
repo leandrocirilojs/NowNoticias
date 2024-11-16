@@ -16,6 +16,9 @@ body {
     align-items: center;
     padding: 20px;
 }
+a{
+    text-decoration: none;
+}
 
 /* Estilo do Título */
 h1 {
