@@ -159,6 +159,7 @@ button:hover {
 }
 
 /* Modal */
+/* Modal */
 #modal {
     display: none;
     position: fixed;
@@ -172,20 +173,18 @@ button:hover {
     z-index: 1000;
 }
 
+/* Ajuste para o conteúdo do modal ocupar toda a tela */
 #modal-content {
-    width: 96%;
-    max-width: 800px;
-    height: 96%;
+    width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.9);
-    
     border: 1px solid #39ff14;
     box-shadow: 0 0 20px #00ffff;
-    overflow: hidden;
+    overflow-y: auto; /* Adiciona rolagem caso o conteúdo seja maior que a tela */
     position: relative;
     display: flex;
     flex-direction: column;
 }
-
 
 
 #close-modal {
