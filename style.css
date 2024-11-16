@@ -172,15 +172,20 @@ button:hover {
 }
 
 #modal-content {
-    height: 100%;
-    width: 100%;
+    width: 96%;
     max-width: 800px;
+    height: 96%;
     background: rgba(0, 0, 0, 0.9);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 188, 212, 0.6);
-    overflow-y: auto;
+    
+    border: 1px solid #39ff14;
+    box-shadow: 0 0 20px #00ffff;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
+
+
 
 #close-modal {
     position: absolute;
