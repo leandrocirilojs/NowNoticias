@@ -8,7 +8,9 @@
 /* Corpo da página */
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #1e1e1e, #004e92);
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcm6VmQzeMXE946Z3M4wW_bIKrOqmV-j_4_ucbZrgeUMcRqGcQpBsHax0w&s=10') no-repeat center center fixed; /* Imagem de fundo */
+    background-size: cover;
+    
     color: #f0f0f0;
     min-height: 100vh;
     display: flex;
