@@ -67,6 +67,7 @@ async function fetchNews(query) {
                         ${imageElement}  <!-- Adiciona a imagem aqui -->
                         <h3><a href="${article.url}" target="_blank">${article.title}</a></h3>
                         <p>${article.source.name}</p>
+                        <p>${article.source.publishedAt}</p>
                         <button onclick="openModal('${article.url}')">Leia mais</button>
                     `;
                     
