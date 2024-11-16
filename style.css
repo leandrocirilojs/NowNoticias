@@ -115,7 +115,7 @@ button:hover {
 
 .news-item h3 {
     font-size: 1.5rem;
-    color: #00bcd4;
+    color: white;
     text-shadow: 0 0 10px rgba(0, 188, 212, 0.7);
     margin-bottom: 10px;
     cursor: pointer;
