@@ -114,6 +114,7 @@ button:hover {
 }
 
 .news-item h3 {
+    text-decoration: white;
     font-size: 1.5rem;
     color: white;
     text-shadow: 0 0 10px rgba(0, 188, 212, 0.7);
@@ -123,7 +124,7 @@ button:hover {
 }
 
 .news-item h3:hover {
-    color: #39ff14;
+    color: white;
 }
 
 .news-item p {
