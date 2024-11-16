@@ -21,7 +21,7 @@ body {
 /* Estilo do Título */
 h1 {
     font-size: 3rem;
-    color: #00bcd4;
+    color: white;
     text-align: center;
     margin-bottom: 30px;
     text-shadow: 0 0 15px rgba(0, 188, 212, 0.8);
