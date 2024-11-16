@@ -65,7 +65,7 @@ async function fetchNews(query) {
 
                     newsItem.innerHTML = `
                         ${imageElement}  <!-- Adiciona a imagem aqui -->
-                        <h3>${article.title}</h3>
+                        <h3><a href="${article.url}" target="_blank">${article.title}</a></h3>
                         <p>${article.source.name}</p>
                         <button onclick="openModal('${article.url}')">Leia mais</button>
                     `;
