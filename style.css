@@ -34,12 +34,14 @@ form {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+    
 }
 
-input {    
-    background-color: gray;
-    padding: 6px;
-    width: 200px;
+input {   
+    margin-right: 5px;
+    background-color: #007bff;
+    padding: 12px;
+    width: 60%px;
     border-radius: 20px 0px 0px 20px;
     color: #fff;
     outline: none;
@@ -47,12 +49,12 @@ input {
 }
 
 input:focus {
-    background-color: gray;
+    background-color: 006bff;
 }
 
 button {
     border-radius: 0px 20px 20px 0px;
-    padding: 6px 6px;
+    padding: 10px 10px;
     background-color: black;
     color: white;
     border: none;
