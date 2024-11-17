@@ -88,8 +88,9 @@ transform: scale(1.02) !important;
 
 /* Estilo das notícias */
 .news-item {
+    border-radius: 15px;
     background: rgba(54, 54, 54);
-    box-shadow: 0 4px 20px rgba(0, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(10, 10, 1p, 0.8);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
