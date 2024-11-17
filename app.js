@@ -9,7 +9,7 @@ const apiKeys = [
 ];
 let currentKeyIndex = 0;
 let page = 1;
-let currentQuery = 'mundo';
+let currentQuery = 'tecnologia;
 
 // Função para obter a API key atual
 function getCurrentApiKey() {
