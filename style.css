@@ -38,6 +38,7 @@ form {
 }
 
 input {   
+    border: none;
     margin-right: 5px;
     background-color: #007bff;
     padding: 12px;
