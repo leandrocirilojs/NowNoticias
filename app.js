@@ -67,10 +67,12 @@ async function fetchNews(query) {
 
                     newsItem.innerHTML = `
                         ${imageElement}  <!-- Adiciona a imagem aqui -->
+                        <div style="padding: 4px;">
                         <h3><a href="${article.url}" target="_blank">${article.title}</a></h3>
                         <p>${article.source.name}</p>
                         <p>${article.publishedAt}</p>
                         <button onclick="openModal('${article.url}')">Read More...</button>
+                        </div>
                     `;
                     
                     newsContainer.appendChild(newsItem);
