@@ -121,6 +121,15 @@ window.onscroll = function () {
         fetchNews(currentQuery);
     }
 };
+//categoria
+function searchByCategory(category) {
+    const searchInput = document.getElementById('search-input');
+    searchInput.value = category; // Preenche o campo de busca com a categoria
+    currentQuery = category; // Atualiza a query atual
+    page = 1; // Reseta para a primeira página
+    fetchNews(currentQuery); // Busca as notícias
+}
+
 
 // Carregar notícias iniciais
 fetchNews(currentQuery);
