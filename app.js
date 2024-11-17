@@ -31,7 +31,7 @@ async function fetchNews(query) {
     let attempts = 0;
     while (attempts < apiKeys.length) {
         const apiKey = getCurrentApiKey();
-        const apiUrl = `https://gnews.io/api/v4/search?q=${encodeURIComponent(query)}&lang=pt&country=br&token=${apiKey}&max=10&page=${page}`;
+        const apiUrl = `https://gnews.io/api/v4/search?q=${encodeURIComponent(query)}&lang=pt&country=br&token=${apiKey}&max=30&page=${page}`;
         
         try {
             const response = await fetch(apiUrl);
