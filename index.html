@@ -8,6 +8,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="categories-menu">
+    <button onclick="searchByCategory('technology')">Tecnologia</button>
+    <button onclick="searchByCategory('business')">Negócios</button>
+    <button onclick="searchByCategory('sports')">Esportes</button>
+    <button onclick="searchByCategory('entertainment')">Entretenimento</button>
+    <button onclick="searchByCategory('health')">Saúde</button>
+    <button onclick="searchByCategory('science')">Ciência</button>
+    </div>
     <form id="search-form">
         <input type="text" id="search-input" placeholder="Digite um tema para buscar..." required>
         <button type="submit">Buscar</button>
