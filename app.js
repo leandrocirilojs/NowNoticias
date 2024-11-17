@@ -1,4 +1,6 @@
 // Lista de múltiplas API keys
+
+
 const apiKeys = [
     'd0f0562569f2218c07ae169682baa311',
     '35c3cdade3bdc0832a425a58a8318194',
@@ -68,7 +70,7 @@ async function fetchNews(query) {
                         <h3><a href="${article.url}" target="_blank">${article.title}</a></h3>
                         <p>${article.source.name}</p>
                         <p>${article.publishedAt}</p>
-                        <button onclick="openModal('${article.url}')">Leia mais</button>
+                        <button onclick="openModal('${article.url}')">Read More...</button>
                     `;
                     
                     newsContainer.appendChild(newsItem);
