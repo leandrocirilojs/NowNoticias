@@ -67,7 +67,7 @@ async function fetchNews(query) {
 
                     newsItem.innerHTML = `
                         ${imageElement}  <!-- Adiciona a imagem aqui -->
-                        <div style="padding: 8px;">
+                        <div style="padding: 12px;">
                         <h3><a href="${article.url}" target="_blank">${article.title}</a></h3>
                         <p>${article.source.name}</p>
                         <p>${article.publishedAt}</p>
