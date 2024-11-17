@@ -99,13 +99,13 @@ transform: scale(1.02) !important;
 
 .news-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 255, 255, 0.4);
+
 }
 
 .news-item h3 {
     font-size: 1.5rem;
     color: #fff;
-    text-shadow: 0 0 10px #39ff14;
+    
     margin-bottom: 15px;
 }
 
@@ -155,8 +155,8 @@ transform: scale(1.02) !important;
     height: 96%;
     background: rgba(0, 0, 0, 0.9);
     
-    border: 1px solid #39ff14;
-    box-shadow: 0 0 20px #00ffff;
+    border: 1px solid #fff;
+    
     overflow: hidden;
     position: relative;
     display: flex;
