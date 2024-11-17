@@ -33,30 +33,30 @@ h1 {
 form {
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
 }
 
-input {
+input {    
+    background-color: gray;
     padding: 6px;
     width: 200px;
-    border-radius: 10px;
-    
-    border-radius: 0px 10px 20px 0px;
+    border-radius: 20px 0px 0px 20px;
     color: #00ffff;
     outline: none;
     transition: all 0.3s ease-in-out;
 }
 
 input:focus {
-    border-color: #39ff14;
-    box-shadow: 0 0 15px #00ffff;
+    background-color: gray;
 }
 
 button {
+    border-radius: 0px 20px 20px 0px;
     padding: 6px 6px;
     background: rgba(0, 0, 0, 0.1);
     color: white;
-    border: 2px solid #00ffff;
-    border-radius: 2px;
+    
+    
     cursor: pointer;
     text-transform: uppercase;
     transition: all 0.3s;
