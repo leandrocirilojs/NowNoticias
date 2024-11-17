@@ -76,7 +76,7 @@ button:hover {
     
     border-radius: 15px !important;
     background-color: rgb(41, 47, 51) !important;
-    box-shadow: 0px 3px 12px 0px #0000002b !important;
+    
     color: #fff !important;
     transition: transform 0.4s ease !important;
     
@@ -94,7 +94,7 @@ transform: scale(1.02) !important;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
 }
 
 .news-item:hover {
