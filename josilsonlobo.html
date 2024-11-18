@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucas Martins - Músico e Compositor</title>
+    <title>Josilson Lobo - Músico e Compositor</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <style>
-    * {
+
+ <style>
+
+     * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -41,7 +43,7 @@ nav ul li a {
 }
 
 .hero {
-    background: url('hero-image.jpg') no-repeat center center/cover;
+    background: url('background.jpg') no-repeat center center/cover;
     height: 60vh;
     display: flex;
     flex-direction: column;
@@ -49,6 +51,7 @@ nav ul li a {
     justify-content: center;
     color: #fff;
     text-align: center;
+    padding: 2rem;
 }
 
 section {
@@ -95,7 +98,7 @@ footer {
     text-align: center;
     padding: 1rem;
 }
-  </style>
+ </style>
     <!-- Navbar -->
     <header>
         <nav>
@@ -111,23 +114,24 @@ footer {
 
     <!-- Home Section -->
     <section id="home" class="hero">
-        <h1>Lucas Martins</h1>
-        <p>Músicas que emocionam, ao vivo e em estúdio</p>
+        <h1>Josilson Lobo</h1>
+        <p>Música e cultura que tocam a alma</p>
     </section>
 
     <!-- Biografia Section -->
     <section id="biografia">
         <h2>Biografia</h2>
-        <p>Lucas Martins é um cantor e compositor brasileiro, especializado em pop e MPB. Suas músicas trazem um toque acústico e letras emocionantes que conquistam o público.</p>
+        <p>Josilson Lobo é um cantor, compositor e professor natural de Crato, Ceará. Formado em Letras, mudou-se para Brasília em 1992, onde lançou sua carreira musical. Inspirado por ídolos como Luiz Gonzaga e Alceu Valença, Josilson criou mais de 100 composições que misturam forró, frevo e MPB.</p>
+        <p>Ele lançou seu primeiro CD, <strong>“Meu Cariri”</strong>, em 1996, seguido por <strong>“Peguei no Ar”</strong> em 1999. Seus sucessos incluem <em>“Chapada do Araripe”</em> e <em>“Viver Brasília”</em>. Atualmente, mora em Fortaleza, dedicando-se exclusivamente à música.</p>
     </section>
 
     <!-- Discografia Section -->
     <section id="discografia">
         <h2>Discografia</h2>
         <ul>
-            <li>Álbum: Caminhos - 2022</li>
-            <li>Álbum: Essência - 2020</li>
-            <li>Single: Além do Horizonte - 2019</li>
+            <li>1996 - Meu Cariri (CD Independente)</li>
+            <li>1999 - Peguei no Ar (CD Autorais)</li>
+            <li>Singles: Forró na Caatingueira, Chapada do Araripe, Viver Brasília</li>
         </ul>
     </section>
 
@@ -135,9 +139,8 @@ footer {
     <section id="shows">
         <h2>Próximos Shows</h2>
         <ul>
-            <li>Rio de Janeiro - 25/11/2024</li>
-            <li>São Paulo - 10/12/2024</li>
-            <li>Belo Horizonte - 15/01/2025</li>
+            <li>Fortaleza - Teatro José de Alencar - 10/12/2024</li>
+            <li>Brasília - Centro de Convenções - 15/01/2025</li>
         </ul>
     </section>
 
@@ -159,12 +162,11 @@ footer {
     </section>
 
     <footer>
-        <p>&copy; 2024 Lucas Martins. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Josilson Lobo. Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-
-      document.querySelector('form').addEventListener('submit', function (event) {
+    <script">
+    document.querySelector('form').addEventListener('submit', function (event) {
     event.preventDefault();
     alert('Mensagem enviada com sucesso!');
     this.reset();
