@@ -4,202 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News World</title>
-    
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Corpo da página */
-body {
-    font-family: 'Orbitron', sans-serif;
-    background-color: rgb(36, 39, 41) !important;
-    color: #e6e6e6;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-}
-a {
-    text-decoration: none;
-    color: #fff;
-}
-
-/* Estilo do formulário */
-form {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-input {
-    border: none;
-    margin-right: 5px;
-    background-color: #007bff;
-    padding: 12px;
-    width: 60%;
-    border-radius: 20px 0px 0px 20px;
-    color: #fff;
-    outline: none;
-    transition: all 0.3s ease-in-out;
-}
-
-input:focus {
-    background-color: 006bff;
-}
-
-button {
-    border-radius: 0px 20px 20px 0px;
-    padding: 14px 14px;
-    background-color: black;
-    color: white;
-    border: none;
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: all 0.3s;
-}
-
-button:hover {
-    background: #00ffff;
-    color: #000;
-}
-
-/* Container de notícias */
-#news-container {
-    border-radius: 15px !important;
-    background-color: rgb(41, 47, 51) !important;
-    color: #fff !important;
-    transition: transform 0.4s ease !important;
-}
-
-/* Estilo das notícias */
-.news-item {
-    border-radius: 15px;
-    background: rgba(54, 54, 54);
-    box-shadow: 0 4px 20px rgba(10, 10, 1p, 0.8);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 8px;
-}
-
-.news-item:hover {
-    transform: translateY(-5px);
-}
-
-.news-item h3 {
-    font-size: 1.5rem;
-    color: #fff;
-    margin-bottom: 15px;
-}
-
-.news-item p {
-    font-size: 1rem;
-    color: #e6e6e6;
-    margin-bottom: 20px;
-}
-
-/* Botão Leia Mais */
-.news-item button {
-    margin-top: 20px;
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background: transparent;
-    border: 2px solid #39ff14;
-    color: #39ff14;
-    padding: 8px 12px;
-    border-radius: 2px;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.news-item button:hover {
-    background: #39ff14;
-    color: #000;
-}
-
-/* Modal */
-#modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-#modal-content {
-    width: 96%;
-    max-width: 800px;
-    height: 96%;
-    background: rgba(0, 0, 0, 0.9);
-    border: 1px solid #fff;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-
-#close-modal {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #ff4d4d;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-iframe {
-    flex: 1;
-    border: none;
-    background: rgba(0, 0, 0, 0.8);
-}
-
-/* Estilo das imagens nas notícias */
-.news-item img {
-    border-top-left-radius: 15px !important;
-    border-top-right-radius: 15px !important;
-    object-fit: cover !important;
-    width: 100% !important;
-    height: 230px !important;
-}
-
-.categories-menu {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.categories-menu button {
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.categories-menu button:hover {
-    background-color: #0056b3;
-}
-    </style>
 </head>
-
 <body>
     <div class="categories-menu">
         <button onclick="searchByCategory('Tecnologia')">Tecnologia</button>
@@ -228,26 +35,61 @@ iframe {
     </div>
 
     <script>
-    
-    let useApiGNews = true; // Começa usando a API GNews
-let currentQuery = 'tecnologia';
+// Lista de múltiplas API keys para GNews
+const apiKeys = [
+    'd0f0562569f2218c07ae169682baa311',
+    '35c3cdade3bdc0832a425a58a8318194',
+    '1a3754dc43e03659f93f4f8a0d6270e1',
+    '393bec881298b81d998019ceae394641'
+];
+let currentKeyIndex = 0;
 let page = 1;
+let currentQuery = 'tecnologia';
+let useApiGNews = true; // Começa usando a API GNews
 
-// Adiciona alternância entre as APIs
+// Função para obter a chave da API atual
+function getCurrentApiKey() {
+    return apiKeys[currentKeyIndex];
+}
+
+// Função para trocar para a próxima chave da API
+function rotateApiKey() {
+    currentKeyIndex++;
+    if (currentKeyIndex >= apiKeys.length) {
+        currentKeyIndex = 0; // Volta ao início
+        return false; // Todas as chaves foram testadas
+    }
+    return true; // Ainda existem chaves para testar
+}
+
+// Alternar entre as APIs
 document.getElementById("toggle-api").onclick = function () {
     useApiGNews = !useApiGNews; // Alterna entre true e false
     this.textContent = useApiGNews ? "Usar Google News RSS" : "Usar API GNews";
     page = 1; // Reinicia a paginação
-    fetchNews(currentQuery); // Busca notícias usando o método ativo
+    fetchNews(currentQuery); // Busca notícias com a nova API selecionada
 };
 
 // Função para buscar notícias via API GNews
 async function fetchNewsFromGNews(query) {
-    const apiKey = 'd0f0562569f2218c07ae169682baa311';
+    const apiKey = getCurrentApiKey();
     const apiUrl = `https://gnews.io/api/v4/search?q=${encodeURIComponent(query)}&lang=pt&country=br&token=${apiKey}&max=30&page=${page}`;
-
+    
     try {
         const response = await fetch(apiUrl);
+        
+        if (response.status === 429) { // Limite de requisições atingido
+            alert(`Limite atingido para a chave ${apiKey}. Tentando a próxima...`);
+            if (!rotateApiKey()) {
+                alert('Todas as chaves foram utilizadas. Tente novamente mais tarde.');
+                return;
+            }
+            fetchNewsFromGNews(query);
+            return;
+        }
+
+        if (!response.ok) throw new Error(`Erro: ${response.status}`);
+        
         const data = await response.json();
         const newsContainer = document.getElementById('news-container');
         if (page === 1) newsContainer.innerHTML = ''; // Limpar resultados anteriores
@@ -256,18 +98,29 @@ async function fetchNewsFromGNews(query) {
             data.articles.forEach(article => {
                 const newsItem = document.createElement('div');
                 newsItem.classList.add('news-item');
+                let imageUrl = article.image || article.urlToImage;
+                let imageElement = '';
+                if (imageUrl) {
+                    imageElement = `<img src="${imageUrl}" alt="Imagem da notícia" class="news-image" />`;
+                }
+
                 newsItem.innerHTML = `
-                    <h3><a href="${article.url}" target="_blank">${article.title}</a></h3>
-                    <p>${article.source.name}</p>
-                    <p>${new Date(article.publishedAt).toISOString().split('T')[0]}</p>
+                    ${imageElement}
+                    <div style="padding: 12px;">
+                        <h3><a href="${article.url}" target="_blank">${article.title}</a></h3>
+                        <p>${article.source.name}</p>
+                        <p>${new Date(article.publishedAt).toISOString().split('T')[0]}</p>
+                        <button onclick="openModal('${article.url}')">Leia Mais...</button>
+                    </div>
                 `;
+                
                 newsContainer.appendChild(newsItem);
             });
         } else {
             newsContainer.innerHTML = '<p>Nenhuma notícia encontrada para sua pesquisa.</p>';
         }
     } catch (error) {
-        console.error("Erro ao buscar notícias da API GNews:", error);
+        console.error('Erro ao buscar notícias:', error);
     }
 }
 
@@ -279,7 +132,83 @@ async function fetchNewsRSS(query) {
         const response = await fetch(rssUrl);
         const text = await response.text();
         const parser = new DOMParser();
-        const xml = parser.parseFromString(text, "
+        const xml = parser.parseFromString(text, "text/xml");
+        const items = xml.querySelectorAll("item");
+        const newsContainer = document.getElementById('news-container');
+        if (page === 1) newsContainer.innerHTML = ''; // Limpar resultados anteriores
+
+        if (items.length > 0) {
+            items.forEach(item => {
+                const newsItem = document.createElement('div');
+                newsItem.classList.add('news-item');
+                const imageUrl = item.querySelector("media\\:thumbnail, thumbnail")?.getAttribute('url') || '';
+                
+                let imageElement = '';
+                if (imageUrl) {
+                    imageElement = `<img src="${imageUrl}" alt="Imagem da notícia" class="news-image" />`;
+                }
+
+                newsItem.innerHTML = `
+                    ${imageElement}
+                    <div style="padding: 12px;">
+                        <h3><a href="${item.querySelector("link").textContent}" target="_blank">${item.querySelector("title").textContent}</a></h3>
+                        <p>${item.querySelector("source") ? item.querySelector("source").textContent : 'Fonte desconhecida'}</p>
+                        <p>${new Date(item.querySelector("pubDate").textContent).toISOString().split('T')[0]}</p>
+                        <button onclick="openModal('${item.querySelector("link").textContent}')">Leia Mais...</button>
+                    </div>
+                `;
+                
+                newsContainer.appendChild(newsItem);
+            });
+        } else {
+            newsContainer.innerHTML = '<p>Nenhuma notícia encontrada para sua pesquisa.</p>';
+        }
+    } catch (error) {
+        console.error('Erro ao buscar notícias do RSS:', error);
+    }
+}
+
+// Função para buscar notícias usando a API ativa
+async function fetchNews(query) {
+    if (useApiGNews) {
+        fetchNewsFromGNews(query);
+    } else {
+        fetchNewsRSS(query);
+    }
+}
+
+// Função para abrir o modal com a notícia
+function openModal(url) {
+    const iframe = document.getElementById('news-iframe');
+    iframe.src = url;
+    document.getElementById('modal').style.display = 'flex';
+}
+
+// Fechar o modal
+document.getElementById('close-modal').onclick = function () {
+    document.getElementById('modal').style.display = 'none';
+    document.getElementById('news-iframe').src = '';
+};
+
+// Buscar notícias ao enviar o formulário
+document.getElementById('search-form').onsubmit = function (event) {
+    event.preventDefault();
+    currentQuery = document.getElementById('search-input').value;
+    page = 1;
+    fetchNews(currentQuery);
+};
+
+// Carregar mais notícias ao rolar a página
+window.onscroll = function () {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+        page++;
+        fetchNews(currentQuery);
+    }
+};
+
+// Buscar notícias iniciais
+fetchNews(currentQuery);
+        
     </script>
 </body>
 </html>
