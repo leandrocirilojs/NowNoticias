@@ -70,7 +70,7 @@ async function fetchNews(query) {
                         <div style="padding: 12px;">
                         <h3><a href="${article.url}" target="_blank">${article.title}</a></h3>
                         <p>${article.source.name}</p>
-                        <p>${article.publishedAt}</p>
+                        <p>${new Date(article.publishedAt).toISOString().split('T')[0]}</p>
                         <button onclick="openModal('${article.url}')">Read More...</button>
                         </div>
                     `;
