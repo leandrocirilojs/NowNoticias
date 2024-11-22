@@ -65,7 +65,7 @@ button {
   flex-direction: column;
   justify-content: center;
   border: none;
-  padding: 12px;
+  padding: 6px;
   gap: 12px;
   border-radius: 8px;
   cursor: pointer;
