@@ -130,6 +130,18 @@ function searchByCategory(category) {
     fetchNews(currentQuery); // Busca as notícias
 }
 
+// Substitua 'YOUR_API_KEY' pela chave da API que você obteve
+const apiKey = '8a5c7364f58fdd9dffe7e030';
+const url = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`;
+
+fetch(url)
+  .then(response => response.json())
+  .then(data => {
+    // Aqui você pode pegar o valor do dólar para o Real
+    const dolarParaReal = data.conversion_rates.BRL;
+    alert(`1 USD = ${dolarParaReal} BRL`);
+  })
+  .catch(error => console.error('Erro ao buscar a cotação:', error));
 
 // Carregar notícias iniciais
 fetchNews(currentQuery);
