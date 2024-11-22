@@ -144,14 +144,16 @@ function showDollarRate() {
             const rateText = document.getElementById('rate-text');
 
             
-            rateText.textContent = `1 USD = ${dolarParaReal} BRL`;
+            rateText.textContent = `1 USD = ${dolarParaReal} R$`;
             
         })
         .catch(error => {
             console.error('Erro ao buscar a cotação do dólar:', error);
         });
 }
-showDollarRate();
+window.onload = function(){
+    showDollarRate();
+};
 
 // Carregar notícias iniciais
 fetchNews(currentQuery);
