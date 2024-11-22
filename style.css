@@ -57,7 +57,7 @@ input:focus {
 button {
   position: relative;
   width: 120px;
-  height: 40px;
+  height: 30px;
   background-color: #000;
   display: flex;
   align-items: center;
@@ -66,7 +66,7 @@ button {
   justify-content: center;
   border: none;
   padding: 6px;
-  gap: 12px;
+  gap: 6px;
   border-radius: 8px;
   cursor: pointer;
 }
