@@ -81,7 +81,7 @@ button:hover {
     
 }
 
-#news-container:rover{
+#news-container:hover{
 transform: scale(1.02) !important;
 }
 
