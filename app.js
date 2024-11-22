@@ -138,7 +138,7 @@ function showDollarRate() {
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            alert(data)
+            alert(data);
             const dolarParaReal = data.conversion_rates.BRL;
             
             const rateText = document.getElementById('rate-text');
