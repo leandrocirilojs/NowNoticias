@@ -139,12 +139,12 @@ function showDollarRate() {
         .then(response => response.json())
         .then(data => {
             const dolarParaReal = data.conversion_rates.BRL;
-            const dolarRateElement = document.getElementById('dolar-rate');
+            
             const rateText = document.getElementById('rate-text');
 
             // Exibindo a cotação
             rateText.textContent = `1 USD = ${dolarParaReal} BRL`;
-            dolarRateElement.style.display = 'block';
+            
         })
         .catch(error => {
             console.error('Erro ao buscar a cotação do dólar:', error);
