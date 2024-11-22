@@ -212,9 +212,9 @@ iframe {
 }
 
 /* Botão flutuante */
-#dolar-button {
+
     /* From Uiverse.io by niat786 */ 
-button {
+#dolar-rate {
     position: fixed;
     right: 10px;
     bottom: 10px;
@@ -237,26 +237,9 @@ button {
   overflow: hidden;
 }
 
-button:hover {
+#dolar-rate:hover {
   cursor: pointer;
   transition: all .3s ease-in;
   padding-right: 30px;
   padding-left: 30px;
-}
-
-
-#dolar-button:hover {
-    background-color: #00ffff;
-}
-
-/* Estilo da exibição da cotação */
-#dolar-rate {
-    position: fixed;
-    bottom: 80px;
-    right: 20px;
-    background-color: #222;
-    color: #fff;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
 }
