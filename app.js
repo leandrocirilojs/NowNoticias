@@ -151,6 +151,7 @@ function showDollarRate() {
             console.error('Erro ao buscar a cotação do dólar:', error);
         });
 }
+showDollarRate();
 
 // Carregar notícias iniciais
 fetchNews(currentQuery);
