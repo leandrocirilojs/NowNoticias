@@ -265,6 +265,7 @@ iframe {
     position: fixed;
     right: 10px;
     bottom: 10px;
+    text-align: center;
   border-radius: .25rem;
   text-transform: uppercase;
   font-style: normal;
