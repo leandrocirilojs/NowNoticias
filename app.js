@@ -138,12 +138,12 @@ function showDollarRate() {
     fetch(url)
         .then(response => response.json())
         .then(data => {
+            alert(data)
             const dolarParaReal = data.conversion_rates.BRL;
             
             const rateText = document.getElementById('rate-text');
 
-            // Exibindo a cotação
-            alert(dolarParaReal)
+            
             rateText.textContent = `1 USD = ${dolarParaReal} BRL`;
             
         })
