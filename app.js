@@ -143,6 +143,7 @@ function showDollarRate() {
             const rateText = document.getElementById('rate-text');
 
             // Exibindo a cotação
+            alert(dolarParaReal)
             rateText.textContent = `1 USD = ${dolarParaReal} BRL`;
             
         })
