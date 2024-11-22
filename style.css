@@ -54,7 +54,7 @@ input:focus {
 }
 
 /* From Uiverse.io by gharsh11032000 */ 
-.button {
+button {
   position: relative;
   width: 120px;
   height: 40px;
@@ -71,7 +71,7 @@ input:focus {
   cursor: pointer;
 }
 
-.button::before {
+button::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -87,7 +87,7 @@ input:focus {
   transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.button::after {
+button::after {
   content: "";
   z-index: -1;
   position: absolute;
@@ -97,15 +97,15 @@ input:focus {
   filter: blur(20px);
 }
 
-.button:hover::after {
+button:hover::after {
   filter: blur(30px);
 }
 
-.button:hover::before {
+button:hover::before {
   transform: rotate(-180deg);
 }
 
-.button:active::before {
+button:active::before {
   scale: 0.7;
 }
 
